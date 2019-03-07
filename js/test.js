@@ -37,3 +37,12 @@ describe("Obtener puntuación:", function(){
     });
 
 });
+
+describe("Calificando restaurant:", function(){
+
+    it("Se agrega una nueva calificación al restaurant", function(){
+        test.calificar(9);
+        expect(test.calificaciones.length).to.eql(6);
+    });
+
+});
