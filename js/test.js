@@ -20,7 +20,7 @@ describe("Reservando horario:", function(){
 
 });
 
-describe("Obtener puntuación:", function(){
+describe("Obteniendo puntuación:", function(){
 
     it("Puntuación calculada correctamente", function(){
         var sumatoriaCalificaciones = 0;
@@ -42,7 +42,15 @@ describe("Calificando restaurant:", function(){
 
     it("Se agrega una nueva calificación al restaurant", function(){
         test.calificar(9);
-        expect(test.calificaciones.length).to.eql(6);
+        expect(test.calificaciones[test.calificaciones.length - 1]).to.eql(9);
+    });
+
+});
+
+describe("Buscando restaurant por su id:", function(){
+
+    it("Comparando el listado de restaurantes con la búsqueda mediante el id", function(){
+        expect(listado.buscarRestaurante(1)).to.eql(test);
     });
 
 });
