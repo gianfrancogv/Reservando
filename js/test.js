@@ -54,3 +54,11 @@ describe("Buscando restaurant por su id:", function(){
     });
 
 });
+
+describe("Obteniendo restaurant según filtro aplicado:", function(){
+
+    it("Filtrando un restaurant con tres parámetros, esperando sea igual al restaurant elegido", function(){
+        expect(listado.obtenerRestaurantes("Asiática","Nueva York","18:00")[0]).to.eql(test);
+    });
+
+});
