@@ -18,17 +18,27 @@ Restaurant.prototype.calificar = function(nuevaCalificacion) {
     }
 }
 
+Restaurant.prototype.sumatoria = function(calificaciones){
+    var resultado = 0;
+    for (var i = 0; i < calificaciones.length; i++) {
+        resultado = resultado + calificaciones[i];
+    }
+    return resultado;
+ }
+ 
+ Restaurant.prototype.promedio = function(sumatoria, calificaciones){
+    var promedio = sumatoria / calificaciones.length;
+    return promedio;
+ }
+
 Restaurant.prototype.obtenerPuntuacion = function() {
     if (this.calificaciones.length === 0) {
         return 0;
     } else {
-        var sumatoria = 0;
-        for (var i = 0; i < this.calificaciones.length; i++) {
-            sumatoria += this.calificaciones[i]
-        }
-        var promedio = sumatoria / this.calificaciones.length;
+        var suma = this.sumatoria(this.calificaciones);
+        var promedio = this.promedio(suma, this.calificaciones);
         return Math.round(promedio * 10) / 10;
     }
-
-}
-
+ }
+ 
+ 
