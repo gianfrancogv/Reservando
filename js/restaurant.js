@@ -24,12 +24,12 @@ Restaurant.prototype.sumatoria = function(calificaciones){
         resultado = resultado + calificaciones[i];
     }
     return resultado;
- }
+}
  
- Restaurant.prototype.promedio = function(sumatoria, calificaciones){
+Restaurant.prototype.promedio = function(sumatoria, calificaciones){
     var promedio = sumatoria / calificaciones.length;
     return promedio;
- }
+}
 
 Restaurant.prototype.obtenerPuntuacion = function() {
     if (this.calificaciones.length === 0) {
@@ -39,6 +39,4 @@ Restaurant.prototype.obtenerPuntuacion = function() {
         var promedio = this.promedio(suma, this.calificaciones);
         return Math.round(promedio * 10) / 10;
     }
- }
- 
- 
+}
