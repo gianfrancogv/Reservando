@@ -29,11 +29,9 @@ Listado.prototype.buscarRestaurante = function(id) {
 //Obtiene todas las ciudades de los restaurantes sin repetidos
 Listado.prototype.obtenerUbicaciones = function() {
     //Array donde se van a ir agregando las ciudades (van a estar repetidas)
-    var ciudades = [];
-    //Se recorre el array de restaurantes y se va agregando al array creado, todas las ubicaciones o ciudades encontradas
-    for (var i = 0; i < this.restaurantes.length; i++) {
-        ciudades.push(this.restaurantes[i].ubicacion);
-    }
+    var ciudades = this.restaurantes.map(function(index){
+        return index.ubicacion;
+    });
     //Se crea un nuevo array donde se van a agregar las ciudades pero sin repetirse
     var ciudadesSinRepetir = eliminaRepetidos(ciudades);
     return ciudadesSinRepetir.sort();
@@ -41,10 +39,9 @@ Listado.prototype.obtenerUbicaciones = function() {
 
 //Obtiene todos los rubros de los restaurantes sin repetidos. Su funcionamiento es similar a obtenerUbicaciones()
 Listado.prototype.obtenerRubros = function() {
-    var rubros = [];
-    for (var i = 0; i < this.restaurantes.length; i++) {
-        rubros.push(this.restaurantes[i].rubro);
-    }
+    var rubros = this.restaurantes.map(function(index){
+        return index.rubro;
+    });
     //Se crea un nuevo array donde se van a agregar los rubros pero sin repetirse
     var rubrosSinRepetir = eliminaRepetidos(rubros);
     return rubrosSinRepetir.sort();
@@ -55,11 +52,9 @@ Listado.prototype.obtenerRubros = function() {
 //convertir en uno solo
 Listado.prototype.obtenerHorarios = function() {
     //En este array se van a cargar los arrays de horarios, que luego vamos convertir en un solo array
-    var arregloHorarios = [];
-    //Recorremos el array de restaurantes y vamos agregando todos los array de horarios
-    for (var i = 0; i < this.restaurantes.length; i++) {
-        arregloHorarios.push(this.restaurantes[i].horarios);
-    }
+    var arregloHorarios = this.restaurantes.map(function(index){
+        return index.horarios;
+    });
 
     //En este arreglo vamos a poner todos los horarios, uno por uno
     var horarios = [];
