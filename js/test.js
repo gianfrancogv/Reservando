@@ -62,3 +62,14 @@ describe("Obteniendo restaurant según filtro aplicado:", function(){
     });
 
 });
+
+describe.only("Reservas", function(){
+    it("El precio base debería ser igual a la cantidad de personas multiplicado por el precio por persona", function(){
+        var reserva1 = new Reserva (new Date(2018, 7, 24, 11, 00), 8, 350, "DES1");
+        expect(reserva1.obtenerPrecioBase()).to.eql(2800);
+    });
+    it("El precio final debería ser igual al precio base más adicionales menos descuentos", function(){
+        var reserva1 = new Reserva (new Date(2018, 7, 24, 11, 00), 8, 350, "DES1");
+        expect(reserva1.obtenerPrecioFinal()).to.eql(2310);
+    });
+});
