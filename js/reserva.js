@@ -14,3 +14,11 @@ Reserva.prototype.obtenerPrecioFinal = function(){
     var descuentos = this.precioPorPersona + this.obtenerPrecioBase()*0.15;
     return this.obtenerPrecioBase() + adicionales - descuentos;
 }
+
+Reserva.prototype.adicionales = function() {
+
+}
+
+Reserva.prototype.descuentos = function() {
+    
+}
