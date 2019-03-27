@@ -70,6 +70,6 @@ describe.only("Reservas", function(){
     });
     it("El precio final debería ser igual al precio base más adicionales menos descuentos", function(){
         var reserva1 = new Reserva (new Date(2018, 7, 24, 11, 00), 8, 350, "DES1");
-        expect(reserva1.obtenerPrecioFinal()).to.eql(2310);
+        expect(reserva1.obtenerPrecioFinal()).to.eql(2450);
     });
 });
